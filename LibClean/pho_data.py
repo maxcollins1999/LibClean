@@ -299,7 +299,7 @@ class pho_data:
             f_num = False
             punc_flag = remove_punc(streetFlags[i]) 
             pat = re.compile(r"(\d{1,3}[a-zA-Z]?)?\s?([a-zA-Z]*\s?[a-zA-Z]+\s)"+
-                            r"("+punc_flag+r")(,|\s)",re.IGNORECASE)
+                            r"("+punc_flag+r")(,|\s|.|$)",re.IGNORECASE)
             match = re.search(pat,punc_comment)
             if match:
                 if match.group(2):
