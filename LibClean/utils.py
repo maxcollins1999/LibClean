@@ -173,6 +173,10 @@ def loadUpdate(file):
     val_ind.append(vals[0].index('Suburb'))
     if None not in val_ind and len(vals)>1:
         for val in vals[1:]:
+            if val[val_ind[2]] == '':
+                val[val_ind[1]] = None
+                val[val_ind[2]] = None
+                val[val_ind[3]] = None
             if all([val[ind] != '' for ind in val_ind]):
                 up_data['url'].append(val[val_ind[0]])
                 up_data['num'].append(val[val_ind[1]])
