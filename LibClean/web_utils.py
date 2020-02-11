@@ -260,9 +260,7 @@ def toloc_js_dump(frame):
     dump = {}
     for im in frame.photos:
         add = False
-        if im.lat == 'NA':
-            add = True
-        elif im.lat is None:
+        if im.lat is None:
             add = True
         if add:
             dump[url_form(im.url)] = {'url':im.url,
